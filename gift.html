@@ -1,0 +1,39 @@
+<!doctype HTML>
+<html>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<script src="aframe.min.js"></script>
+<script src="aframe-ar.js"></script>
+<script src="aframe-text-geometry-component.min.js"></script>
+
+<body style="margin: 0px; overflow: hidden;">
+
+<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
+
+	<a-assets>
+		<a-asset-item id="exoFont" src="exoBlack.typeface.json"></a-asset-item>
+		<img id="pixels" src="pixels.png" />
+	</a-assets>
+
+	<a-marker type="pattern" url="pattern-question-mark_2.patt">
+		<a-entity text-geometry="value: VR; font: #exoFont; size: 0.8;"
+			material="color: yellow; src: #pixels; repeat: 0.5 0.5;" 
+			rotation="0 0 0"
+			position="-0.8 0.5 0">
+		</a-entity>
+
+	</a-marker>
+	
+	<a-marker type="pattern" url="pattern-gift-icon-clipart-8.patt">
+		<a-entity gltf-model="GiftBox_gltf.gltf"
+                    position="0 0 0" 
+                    rotation="0 0 0"
+                    scale="0.5 0.5 0.5"
+                    animation__rotate = "property: rotation; dur: 8000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;"
+                    ></a-entity>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+    
+</a-scene>
+</body>
+</html>
